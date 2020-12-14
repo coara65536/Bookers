@@ -1,0 +1,26 @@
+
+<h1>Editing Book</h1>
+  <% if @book.errors.any? %>
+    <h3>error</h3>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+<%= form_for(@book) do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Body</p>
+  <%= f.text_field :body %>
+  <br>
+  <br>
+  <%= f.submit "Update Book" %>
+<% end %>
+
+<p>
+	<%= link_to "show", book_path %>
+	|
+    <a href="/books">Back</a>
+</p>
