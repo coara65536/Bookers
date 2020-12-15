@@ -13,7 +13,7 @@
     </ul>
   <% end %>
  
-<table>
+    <table>
 		<thead>
 			<tr>
 				<th><P>title</P></th>
@@ -22,14 +22,13 @@
 		</thead>
 		<tbody>
 			<% @books.each do |book| %>
-
-			<tr>
-				<td><span><%= book.title %></span></td>
-				<td><span><%= book.body %></span></td>
-				<td><span><%= link_to "show", "/books/#{book.id}"%></span></td>
-				<td><span><%= link_to "edit", edit_book_path(book) %></span></td>
-				<td><span><%= link_to "destroy", book_path(book), method: :delete,"data-confirm" =>"Are you sure？" %></span></td>
-	    </tr>
+		    	<tr>
+			    	<td><span><%= book.title %></span></td>
+			    	<td><span><%= book.body %></span></td>
+			    	<td><span><%= link_to "show", "/books/#{book.id}"%></span></td>
+			    	<td><span><%= link_to "edit", edit_book_path(book) %></span></td>
+			    	<td><span><%= link_to "destroy", book_path(book), method: :delete,"data-confirm" =>"Are you sure？" %></span></td>
+	            </tr>
 			<% end %>
 
 		</tbody>
